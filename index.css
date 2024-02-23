@@ -30,7 +30,7 @@ header a{
 
 .container{
     height: 100%;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;  
     background-attachment: fixed;
@@ -55,27 +55,21 @@ header a{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.elemento {
-    margin-right: 20px;
-    margin-left: 20px;
-    display: inline-block;
-}
-
 
 #divOp{
 	margin-top: 60px;
 	text-align: center;
-    margin-right: 20px;
-    margin-left: 20px;
     display: inline-block;
-    height: 40px;
-    width: 100vw;
+    height: 180px;
+    width: 100%;
 }
 
-.elemento {
+.elemento{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
     text-align: center;
     border-radius: 10px;
-    height: 100%;
+    height: 40px;
     width: 33%;
     background-color: #F9F07A;
     color: #9195F6;
@@ -98,8 +92,22 @@ header a{
     color: #F9F07A;
 }
 .elemento select option {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     text-align: center; 
 }
+#texto{
+    margin-top:50px ;
+}
 
-
-
+.linea{
+    position: absolute;
+    top: 100vh;
+    background-color:#F9F07A;
+    height: 2px;
+    width: 100%;
+}
+.pie{
+    background-color: #fb88b4;
+    width: 100%;
+    height: 100px;
+}
