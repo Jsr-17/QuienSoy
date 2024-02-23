@@ -29,7 +29,7 @@ header a{
 }
 
 .container{
-    height: calc(100vh - 160px);
+    height: 100%;
     width: 100vw;
     justify-content: center;
     align-items: center;  
@@ -54,29 +54,52 @@ header a{
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
-#contText{
-    display: flex;
-    margin: 20px;
-    height: 60px;
-    width: 33%;
-    background-color: #F9F07A;
+
+.elemento {
+    margin-right: 20px;
     margin-left: 20px;
-    border-radius: 20px;
-    margin-top: 100px;
-    min-height: 60px;
+    display: inline-block;
 }
 
 
-#texto{
-    color: #9195F6;
+#divOp{
+	margin-top: 60px;
+	text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    height: 40px;
+    width: 100vw;
+}
+
+.elemento {
+    text-align: center;
+    border-radius: 10px;
     height: 100%;
-    width: 95%;
+    width: 33%;
+    background-color: #F9F07A;
+    color: #9195F6;
+    display: inline-block;
+}
+
+.elemento select {
+    text-align-last: center;
     background-color: transparent;
-    border-radius: 20px;
+    height: 40px;
+    width: calc(100% - 20px);
     border: none;
+    color: #9195F6;
     outline: none;
 }
 
-#contText p{
-    box-shadow:none;
+.elemento select option {
+    border-radius: 10px;
+    background-color: #9195F6;
+    color: #F9F07A;
 }
+.elemento select option {
+    text-align: center; 
+}
+
+
+
