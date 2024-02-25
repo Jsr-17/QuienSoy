@@ -69,21 +69,25 @@ header a{
     margin: 20px;
     text-align: center;
     border-radius: 10px;
-    height: 40px;
+    height: 80px;
     width: 33%;
     background-color: #F9F07A;
     color: #9195F6;
-    display: inline-block;
+    display: inline-flex;
+    justify-items: center;
+    align-items: center;
+    
 }
 
 .elemento select {
     text-align-last: center;
     background-color: transparent;
     height: 40px;
-    width: calc(100% - 20px);
+    width: calc(100% - 50px);
     border: none;
     color: #9195F6;
     outline: none;
+    font-size: medium;
 }
 
 .elemento select option {
