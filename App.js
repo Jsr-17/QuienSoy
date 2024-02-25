@@ -24,6 +24,7 @@ const juana = document.querySelector("#Juana");
 const jeronimo = document.querySelector("#Jeronimo");
 const datoSelect2 = document.querySelector("#eleccion2");
 const datoSelect = document.querySelector("#eleccion");
+const idTxt= document.querySelector("#texto");
 
 const colorDelPelo = [
     "Negro", "Castaño", "Pelirrojo", "Rubio"
@@ -64,6 +65,10 @@ const arrayPersonajes = [
     felipe, david, esther, ramon
 ];
 
+document.addEventListener("DOMContentLoaded",()=>{
+    const personajeElegido= eligePersonaje();
+    console.log(personajeElegido);
+})
 
 datoSelect.addEventListener('change', () => {
     for (let i = 0; i < datoSelect.length; i++) {
@@ -179,17 +184,29 @@ datoSelect.addEventListener('change', () => {
 
     }
 })
+idTxt.addEventListener('click',()=>{
+    compruebaAtributos(datoSelect.value,datoSelect2.value.toLowerCase());
+    console.log(datoSelect.value,datoSelect2.value.c);
+})
 
 
 
 
 
-
-function consigueAtributos(atributo, caracteristica) {
+function compruebaAtributos(atributo, caracteristica) {
     for (let index = 0; index < arrayPersonajes.length; index++) {
         let atributos = arrayPersonajes[index].getAttribute(atributo);
         if (atributos != caracteristica) {
             arrayPersonajes[index].style.opacity = "0.5";
+        }
+    }
+}
+
+function eligePersonaje() {
+    for (let index = 0; index < arrayPersonajes.length; index++) {
+        let personajeElegido = arrayPersonajes[index].getAttribute("n");
+        if(personajeElegido== 1/*random()*/){
+            return arrayPersonajes[index];
         }
     }
 }
@@ -202,3 +219,8 @@ function eliminaElementos(){
     }
 
 }
+function random() {
+    return Math.floor((Math.random() * 24)+1);
+}
+
+/* Eventos para cuando clickas en el personaje*/
