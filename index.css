@@ -12,7 +12,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 80px;
-    width: 100vw;
+    width: 100%;
 }
 
 header #log {
@@ -82,7 +82,7 @@ header a{
 .elemento select {
     text-align-last: center;
     background-color: transparent;
-    height: 40px;
+    height: 100%;
     width: calc(100% - 50px);
     border: none;
     color: #9195F6;
@@ -94,24 +94,59 @@ header a{
     border-radius: 10px;
     background-color: #9195F6;
     color: #F9F07A;
-}
-.elemento select option {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     text-align: center; 
 }
-#texto{
-    margin-top:50px ;
+#texto {
+    height: 30px;
+    width: 100px;
+    position: relative;
+    top: -60px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F07A;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
+
 .linea{
-    position: absolute;
-    top: 100vh;
+	position: relative;
     background-color:#F9F07A;
     height: 2px;
     width: 100%;
 }
-.pie{
-    background-color: #fb88b4;
-    width: 100%;
-    height: 100px;
+
+footer {
+    background-color: #FB88B4;
+    color: #F9F07A;
+    padding: 20px;
+    text-align: center;
+    height: 80px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+footer p{
+    text-decoration: none;
+    color: #F9F07A;
+    margin: 20px;
+}
+footer img{
+	height: 100%;
+}
+footer a{
+	margin: 20px;
+	height: 30px;
+	width: 30px;
+}
+#vertical{
+	background-color: #F9F07A;
+	height: 75%;
+	width: 2px;
+}
+
