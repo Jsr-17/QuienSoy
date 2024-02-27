@@ -71,6 +71,7 @@ personajeElegido.setAttribute("elected","elected")
 
 
 datoSelect.addEventListener('change', () => {
+    // Elimina el elementos de la lista de datos
     for (let i = 0; i < datoSelect.length; i++) {
         const elemento = datoSelect[i].value;
 
@@ -188,7 +189,14 @@ idTxt.addEventListener('click',()=>{
     compruebaAtributos(datoSelect.value,datoSelect2.value.toLowerCase());
 })
 
+/**
+* CompruebaAtributos Funcion que permite visualizar los atributos de un personaje
+* 
+* @param atributo - Nombre del atributo a mostrar
+* @param caracteristica - Indica si tiene caracteristicas o
+*/
 function compruebaAtributos(atributo, caracteristica) {
+    // Devuelve  la caracteristica.
     for (let index = 0; index < arrayPersonajes.length; index++) {
         let atributos = arrayPersonajes[index].getAttribute(atributo);
         if (atributos != caracteristica) {
@@ -197,17 +205,29 @@ function compruebaAtributos(atributo, caracteristica) {
     }
 }
 
+/**
+* Funcion que elige el personaje en el array de personajes devuelve el objeto personaje
+* 
+* 
+* @return { Object } El personaje del objeto personaje si existe o null si no exist
+*/
 function eligePersonaje() {
     let nAleatorio= random();
+    // Devuelve el personaje de la lista de personajes
     for (let index = 0; index < arrayPersonajes.length; index++) {
         let personajeElegido = arrayPersonajes[index].getAttribute("n");
+        // Devuelve el personaje de la cadena de la lista de personajes
         if(personajeElegido == nAleatorio){
             return arrayPersonajes[index];
         }
     }
 }
 
+/**
+* Elimina elementos del formulario seleccionado 
+*/
 function eliminaElementos(){
+
     while (datoSelect2.firstChild) {
         datoSelect2.firstChild.remove();
     }
@@ -216,12 +236,23 @@ function eliminaElementos(){
 
 
 
+/**
+* Generates a random number between 1 and 24. This is used to generate random numbers that are in the range of a user's email address.
+* 
+* 
+* @return { number } The random number between 1 and 24 ( inclusive ) as a number between 1 and 2^24
+*/
 function random() {
    let n= Math.floor((Math.random() * 24)+1);
 
     return n;
 }
 
+/**
+* Comprueba ganador en el boton se encuentra de la personaje
+* 
+* @param e - Evento que genero el evento 
+*/
 function compruebaGanador(e){
         if(e.currentTarget.getAttribute("id")==personajeElegido.getAttribute("id")){
             console.log("El ganador es "+e.currentTarget.id)
