@@ -1,3 +1,4 @@
+
 const cayetana = document.querySelector("#Cayetana");
 const roberto = document.querySelector("#Roberto");
 const mara = document.querySelector("#Mara");
@@ -65,10 +66,9 @@ const arrayPersonajes = [
     felipe, david, esther, ramon
 ];
 
-document.addEventListener("DOMContentLoaded",()=>{
-    const personajeElegido= eligePersonaje();
-    console.log(personajeElegido);
-})
+const personajeElegido=eligePersonaje();
+personajeElegido.setAttribute("elected","elected")
+
 
 datoSelect.addEventListener('change', () => {
     for (let i = 0; i < datoSelect.length; i++) {
@@ -186,12 +186,7 @@ datoSelect.addEventListener('change', () => {
 })
 idTxt.addEventListener('click',()=>{
     compruebaAtributos(datoSelect.value,datoSelect2.value.toLowerCase());
-    console.log(datoSelect.value,datoSelect2.value.c);
 })
-
-
-
-
 
 function compruebaAtributos(atributo, caracteristica) {
     for (let index = 0; index < arrayPersonajes.length; index++) {
@@ -203,15 +198,14 @@ function compruebaAtributos(atributo, caracteristica) {
 }
 
 function eligePersonaje() {
+    let nAleatorio= random();
     for (let index = 0; index < arrayPersonajes.length; index++) {
         let personajeElegido = arrayPersonajes[index].getAttribute("n");
-        if(personajeElegido== 1/*random()*/){
+        if(personajeElegido == nAleatorio){
             return arrayPersonajes[index];
         }
     }
 }
-
-
 
 function eliminaElementos(){
     while (datoSelect2.firstChild) {
@@ -219,8 +213,91 @@ function eliminaElementos(){
     }
 
 }
+
+
+
 function random() {
-    return Math.floor((Math.random() * 24)+1);
+   let n= Math.floor((Math.random() * 24)+1);
+
+    return n;
 }
 
+function compruebaGanador(e){
+        if(e.currentTarget.getAttribute("id")==personajeElegido.getAttribute("id")){
+            console.log("El ganador es "+e.currentTarget.id)
+        }
+}
 /* Eventos para cuando clickas en el personaje*/
+
+cayetana.addEventListener('click', (e)=>{
+    compruebaGanador(e)
+});
+ramon.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+rita.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+roberto.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+manolo.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+mara.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+maria.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+marta.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+aitana.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+alvaro.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+asier.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+valentina.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+vanesa.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+esther.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+idoia.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+xema.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+javier.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+jeronimo.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+jesus.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+juan.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+juana.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+felipe.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+david.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
+esther.addEventListener('click',(e)=>{
+    compruebaGanador(e)
+});
