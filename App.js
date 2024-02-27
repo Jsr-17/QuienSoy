@@ -67,7 +67,7 @@ const arrayPersonajes = [
 ];
 
 const personajeElegido=eligePersonaje();
-personajeElegido.setAttribute("elected","elected")
+
 
 
 datoSelect.addEventListener('change', () => {
