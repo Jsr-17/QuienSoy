@@ -186,7 +186,10 @@ datoSelect.addEventListener('change', () => {
     }
 })
 idTxt.addEventListener('click',()=>{
-    compruebaAtributos(datoSelect.value,datoSelect2.value.toLowerCase());
+
+    if (personajeElegido.getAttribute(datoSelect.value)==datoSelect2[datoSelect2.selectedIndex].textContent.toLowerCase()) {
+        compruebaAtributos(datoSelect.value,datoSelect2.value.toLowerCase());
+    }
 })
 
 /**
@@ -254,7 +257,8 @@ function random() {
 * @param e - Evento que genero el evento 
 */
 function compruebaGanador(e){
-        if(e.currentTarget.getAttribute("id")==personajeElegido.getAttribute("id")){
+        
+    if(e.currentTarget.getAttribute("id")==personajeElegido.getAttribute("id")){
             console.log("El ganador es "+e.currentTarget.id)
         }
 }
@@ -278,6 +282,8 @@ manolo.addEventListener('click',(e)=>{
 mara.addEventListener('click',(e)=>{
     compruebaGanador(e)
 });
+
+mara.addEventListener('')
 maria.addEventListener('click',(e)=>{
     compruebaGanador(e)
 });
@@ -332,3 +338,4 @@ david.addEventListener('click',(e)=>{
 esther.addEventListener('click',(e)=>{
     compruebaGanador(e)
 });
+console.log(personajeElegido);
