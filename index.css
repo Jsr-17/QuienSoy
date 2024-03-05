@@ -7,6 +7,7 @@ body{
 }
 
 /* Estilo para el encabezado */
+/*elimina este comentario
 header {
     margin-top: 0; /* Sin margen superior */
     background-color: #9195F6; /* Color de fondo del encabezado */
