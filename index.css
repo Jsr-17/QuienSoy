@@ -169,3 +169,6 @@ footer a{
     height: 75%; /* Altura del 75% del contenedor */
     width: 2px; /* Ancho */
 }
+#texto:hover{
+    cursor:pointer;
+}

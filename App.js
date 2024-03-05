@@ -259,7 +259,7 @@ function random() {
 function compruebaGanador(e){
         
     if(e.currentTarget.getAttribute("id")==personajeElegido.getAttribute("id")){
-            console.log("El ganador es "+e.currentTarget.id)
+            alert("Has ganado");
         }
 }
 /* Eventos para cuando clickas en el personaje*/
