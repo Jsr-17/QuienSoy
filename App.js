@@ -25,14 +25,14 @@ const juana = document.querySelector("#Juana");
 const jeronimo = document.querySelector("#Jeronimo");
 const datoSelect2 = document.querySelector("#eleccion2");
 const datoSelect = document.querySelector("#eleccion");
-const idTxt= document.querySelector("#texto");
+const idTxt = document.querySelector("#texto");
 
 const colorDelPelo = [
     "Negro", "Castaño", "Pelirrojo", "Rubio"
 ];
 
 const colorDePiel = [
-    "Blanco","Negro"
+    "Blanco", "Negro"
 
 ];
 const Gafas = [
@@ -50,11 +50,11 @@ const bigote = [
 const barba = [
     "Si", "No"
 ];
-const colorCamiseta=[
-    "Marron","Azul","Rosa","Violeta","Verde","Amarilla"
+const colorCamiseta = [
+    "Marron", "Azul", "Rosa", "Violeta", "Verde", "Amarilla"
 ];
-const pendientes=[
-    "Si","No"
+const pendientes = [
+    "Si", "No"
 ];
 
 
@@ -66,9 +66,9 @@ const arrayPersonajes = [
     felipe, david, esther, ramon
 ];
 
-const personajeElegido=eligePersonaje();
+const personajeElegido = eligePersonaje();
 
-
+let vidas = 4;
 
 datoSelect.addEventListener('change', () => {
     // Elimina el elementos de la lista de datos
@@ -79,7 +79,7 @@ datoSelect.addEventListener('change', () => {
 
             switch (elemento) {
                 case "colorPelo":
-                eliminaElementos();
+                    eliminaElementos();
                     for (let i = 0; i < colorDelPelo.length; i++) {
                         let nuevo = document.createElement("option");
                         let texto = document.createTextNode = colorDelPelo[i];
@@ -185,10 +185,14 @@ datoSelect.addEventListener('change', () => {
 
     }
 })
-idTxt.addEventListener('click',()=>{
-
-    if (personajeElegido.getAttribute(datoSelect.value)==datoSelect2[datoSelect2.selectedIndex].textContent.toLowerCase()) {
-        compruebaAtributos(datoSelect.value,datoSelect2.value.toLowerCase());
+idTxt.addEventListener('click', () => {
+let acertado=false;
+    if (personajeElegido.getAttribute(datoSelect.value) == datoSelect2[datoSelect2.selectedIndex].textContent.toLowerCase()) {
+        compruebaAtributos(datoSelect.value, datoSelect2.value.toLowerCase());
+        acertado=true;
+    }
+    if (!acertado) {
+        compruebaPerder();
     }
 })
 
@@ -204,7 +208,17 @@ function compruebaAtributos(atributo, caracteristica) {
         let atributos = arrayPersonajes[index].getAttribute(atributo);
         if (atributos != caracteristica) {
             arrayPersonajes[index].style.opacity = "0.5";
-        }
+        } 
+    }
+
+}
+//Funcion para saber cuando hemos perdido
+
+function compruebaPerder() {
+    vidas--;
+    alert("Has fallado te quedan estas vidas " + vidas);
+    if (vidas == 0) {
+        alert("Has perdido");
     }
 }
 
@@ -215,12 +229,12 @@ function compruebaAtributos(atributo, caracteristica) {
 * @return { Object } El personaje del objeto personaje si existe o null si no exist
 */
 function eligePersonaje() {
-    let nAleatorio= random();
+    let nAleatorio = random();
     // Devuelve el personaje de la lista de personajes
     for (let index = 0; index < arrayPersonajes.length; index++) {
         let personajeElegido = arrayPersonajes[index].getAttribute("n");
         // Devuelve el personaje de la cadena de la lista de personajes
-        if(personajeElegido == nAleatorio){
+        if (personajeElegido == nAleatorio) {
             return arrayPersonajes[index];
         }
     }
@@ -229,12 +243,10 @@ function eligePersonaje() {
 /**
 * Elimina elementos del formulario seleccionado 
 */
-function eliminaElementos(){
-
+function eliminaElementos() {
     while (datoSelect2.firstChild) {
         datoSelect2.firstChild.remove();
     }
-
 }
 
 
@@ -246,7 +258,7 @@ function eliminaElementos(){
 * @return { number } The random number between 1 and 24 ( inclusive ) as a number between 1 and 2^24
 */
 function random() {
-   let n= Math.floor((Math.random() * 24)+1);
+    let n = Math.floor((Math.random() * 24) + 1);
 
     return n;
 }
@@ -256,86 +268,89 @@ function random() {
 * 
 * @param e - Evento que genero el evento 
 */
-function compruebaGanador(e){
-        
-    if(e.currentTarget.getAttribute("id")==personajeElegido.getAttribute("id")){
-            alert("Has ganado");
-        }
+function compruebaGanador(e) {
+
+    if (e.currentTarget.getAttribute("id") == personajeElegido.getAttribute("id")) {
+        alert("Has ganado");
+    } else {
+        compruebaPerder();
+    }
 }
 /* Eventos para cuando clickas en el personaje*/
 
-cayetana.addEventListener('click', (e)=>{
+cayetana.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-ramon.addEventListener('click',(e)=>{
+ramon.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-rita.addEventListener('click',(e)=>{
+rita.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-roberto.addEventListener('click',(e)=>{
+roberto.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-manolo.addEventListener('click',(e)=>{
+manolo.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-mara.addEventListener('click',(e)=>{
+mara.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
 
-mara.addEventListener('')
-maria.addEventListener('click',(e)=>{
+maria.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-marta.addEventListener('click',(e)=>{
+marta.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-aitana.addEventListener('click',(e)=>{
+aitana.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-alvaro.addEventListener('click',(e)=>{
+alvaro.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-asier.addEventListener('click',(e)=>{
+asier.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-valentina.addEventListener('click',(e)=>{
+valentina.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-vanesa.addEventListener('click',(e)=>{
+vanesa.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-esther.addEventListener('click',(e)=>{
+esther.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-idoia.addEventListener('click',(e)=>{
+idoia.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-xema.addEventListener('click',(e)=>{
+xema.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-javier.addEventListener('click',(e)=>{
+javier.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-jeronimo.addEventListener('click',(e)=>{
+jeronimo.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-jesus.addEventListener('click',(e)=>{
+jesus.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-juan.addEventListener('click',(e)=>{
+juan.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-juana.addEventListener('click',(e)=>{
+juana.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-felipe.addEventListener('click',(e)=>{
+felipe.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-david.addEventListener('click',(e)=>{
+david.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-esther.addEventListener('click',(e)=>{
+esther.addEventListener('click', (e) => {
     compruebaGanador(e)
 });
-console.log(personajeElegido);
+gracia.addEventListener('click', (e) => {
+    compruebaGanador(e)
+});

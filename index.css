@@ -172,3 +172,6 @@ footer a{
 #texto:hover{
     cursor:pointer;
 }
+img:hover{
+    cursor: pointer;
+}
